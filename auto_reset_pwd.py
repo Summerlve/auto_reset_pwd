@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from multiprocessing.dummy import current_process
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -81,6 +80,7 @@ login_in_btn_ele.click()
 # nav to stu page
 driver.get("https://jssnd.edu.cn/cs/s/student")
 
-# get stu json data
-sleep(8) # wait for type in auth code
+# get and save stu json data
+stu_info_json_path = os.path.join(cur_path, "stu_info.json")
+sleep(5) # wait a little
 driver.quit()
