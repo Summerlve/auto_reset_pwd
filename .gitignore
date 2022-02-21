@@ -136,3 +136,9 @@ dmypy.json
 
 # account info
 account.json
+
+# project side effect
+auth_img.jpg
+clear_auth_img.jpg
+output.txt
+stu_info.json
