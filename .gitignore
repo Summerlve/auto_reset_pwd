@@ -133,3 +133,6 @@ dmypy.json
 
 # VSCode
 .vscode
+
+# account info
+account.json
