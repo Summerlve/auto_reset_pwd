@@ -80,7 +80,27 @@ login_in_btn_ele.click()
 # nav to stu page
 driver.get("https://jssnd.edu.cn/cs/s/student")
 
+sleep(2) # wait a little
+
 # get and save stu json data
 stu_info_json_path = os.path.join(cur_path, "stu_info.json")
+
+#
+ajax_result = driver.execute_async_script("""
+    $.ajax({
+        url: "https://jssnd.edu.cn/apiu/v1/students",
+        type: "POST",
+        data: JSON.stringify({"page":5,"page_n":"10","key":""}),
+        success: function(result) {
+            alert(JSON.stringify(result));
+            return result;
+        },
+        error: function(jqXHR, exception) {
+            return jqXHR.status;
+        }
+    })
+    """)
+print(ajax_result)
+
 sleep(5) # wait a little
 driver.quit()
